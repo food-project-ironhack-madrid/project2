@@ -1,0 +1,30 @@
+<h2>Add Restaurant</h2>
+{{!-- Falta implementar ruta de action --}}
+<form action="/restaurant/create-rest" method="POST" id="form-container"> 
+  <label for="name">Restaurant Name</label>
+  <input id="name" type="text" name="name" placeholder="eg: Potato Factory">
+
+  <br><br>
+
+  <label for="location">Location</label>
+  <input id="location" type="location" name="location" placeholder="eg: Calle Mayor, 2">
+  <br>
+  <label for="foodStyle">Food Style</label>
+  <input id="foodStyle" type="foodStyle" name="foodStyle" placeholder="eg: Mexican">
+  <br>
+  <label for="specialties">Specialties</label>
+  <input id="specialties" type="specialties" name="specialties" placeholder="eg: Tacos, Burritos">
+  <br>
+  <label for="phone">Phone Number</label>
+  <input id="phone" type="phone" name="phone" placeholder="eg: 912323203">
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button id="create-rest">Create new Restaurant</button>
+
+</form>
+
