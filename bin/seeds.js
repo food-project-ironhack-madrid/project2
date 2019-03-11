@@ -1,9 +1,9 @@
+require('dotenv').config();
+
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
-
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const Rest = require("../models/Rest");
+const Restaurant = require("../models/Restaurant");
 
 mongoose
   .connect(process.env.DB, {useNewUrlParser: true})
@@ -82,3 +82,20 @@ let restaurants = [
     website: "https://www.fratellifigurato.es/"
   },
 ]
+
+Restaurant.deleteMany()
+.then(() => {
+ return Restaurant.create(restaurants)
+})
+.then(restaurantsCreated => {
+ //console.log(`${restaurantsCreated.length} users created with the following id:`);
+ //console.log(restaurantsCreated.map(u => u._id));
+})
+.then(() => {
+ // Close properly the connection to Mongoose
+ mongoose.disconnect()
+})
+.catch(err => {
+ mongoose.disconnect()
+ throw err
+})

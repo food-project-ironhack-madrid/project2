@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const restSchema = new Schema({
   name: String,
@@ -15,5 +15,5 @@ const restSchema = new Schema({
   timestamps: true
 });
 
-const Rest = mongoose.model('Rest', restSchema);
-module.exports = Rest;
+const Restaurant = mongoose.model('Restaurant', restSchema)
+module.exports = Restaurant

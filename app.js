@@ -13,7 +13,6 @@ const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");
     
-
 mongoose
   .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
@@ -42,12 +41,10 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
       
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-
 
 hbs.registerHelper('ifUndefined', (value, options) => {
   if (arguments.length < 2)
@@ -59,10 +56,8 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   }
 });
   
-
 // default value for title local
 app.locals.title = 'Search for Food & Restaurants';
-
 
 // Enable authentication using session + passport
 app.use(session({
@@ -74,7 +69,6 @@ app.use(session({
 app.use(flash());
 require('./passport')(app);
     
-
 const index = require('./routes/index');
 app.use('/', index);
 
