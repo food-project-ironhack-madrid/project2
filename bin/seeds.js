@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-// To execute this seed, run from the root of the project
-// $ node bin/seeds.js
 const mongoose = require("mongoose");
 const Restaurant = require("../models/Restaurant");
 
@@ -17,12 +15,12 @@ mongoose
 let restaurants = [
   {
     name: "Avocado Love",
-    logo: "/images/avocado-love-logo.jpg",
+    logo: "/images/avocado-love-logo.png",
     description: "First avocado bar in Madrid. Vegan and gluten-free restaurant where all dishes have avocado as one of the ingredients.",
     address: "Marqués de Santa Ana 34, Madrid, Spain",
     location:{type: "Point", coordinates: ["40.4252588","-3.7036406"]},
     foodStyle: "Vegan",
-    specialties: ["Gluten-free","Avocado"],
+    specialties: ["gluten free","avocado"],
     phone: "+34 667201169",
     menu: "/images/avocado-love-menu.png",
     website: "https://avocadolove.es/"
@@ -34,7 +32,7 @@ let restaurants = [
     address: "Costanilla de San Andrés, 16. 28005 Madrid, Spain",
     location:{type: "Point", coordinates: ["40.4138258","-3.7116641"]},
     foodStyle: "Vegan",
-    specialties: ["Wraps","Burgers", "Homemade pies", "Salads"],
+    specialties: ["wraps","burgers", "pies", "salads"],
     phone: "+34 91 366 33 49",
     menu: "/images/viva-burger-menu.png",
     website: "http://vivaburger.es/"
@@ -46,28 +44,30 @@ let restaurants = [
     address: "Paseode la Castellana, 8928046",
     location:{type: "Point", coordinates: ["40.4457662","-3.691435"]},
     foodStyle: "Healthy cuisine",
-    specialties: ["sweet potato", "quinoa"],
+    specialties: ["sweet potato", "quinoa", "avocado"],
     phone: "+34 914 21 50 11",
     menu: "/images/honest-greens-menu.jpg",
     website: "https://honestgreens.com/"
   },
   {
     name: "Triciclo",
+    logo: "/images/triciclo-logo.png",
     description: "",
     address: "Calle de Sta. Maria, 28, Madrid, Spain",
     location:{type: "Point", coordinates: [40.4128929,-3.697243]},
-    foodStyle: "Spanish",
-    specialties: ["oyster ","artichokes "],
+    foodStyle: "spanish",
+    specialties: ["oyster ","artichokes"],
     phone: "+34-910244798",
     menu: "/images/triciclo-menu.png",
     website: "http://eltriciclo.es/triciclo/"
   },
   {
     name: "Sahuaro",
+    logo: "/images/sahuaro-logo.png",
     description: "",
     address: "Plaza de Cascorro, 2, Madrid, Spain",
     location:{type: "Point", coordinates: [40.411229,-3.707142]},
-    foodStyle: "Mexican",
+    foodStyle: "mexican",
     specialties: ["tacos"," burritos"],
     phone: "+34-914296449",
     menu: "/images/sahuaro-menu.png",
@@ -75,10 +75,11 @@ let restaurants = [
   },
   {
     name: "Fratelli Figurato",
+    logo: "/images/fratelli-figurato-logo.png",
     description: "Dos hermanos napolitanos y una pasión fortísima por la pizza. Una carrera prominente en Marketing en diferentes países, pero deciden dejarlo todo. Solo tienen un gran sueño. Reinventar la grande pizza napolitana utilizando como ingrediente secreto la innovación, haciéndola más ligera y utilizando productos increíbles de la tierra.",
     address: "Calle de Alonso Cano, 37, Madrid, Spain",
     location:{type: "Point", coordinates: [40.438911,-3.697848]},
-    foodStyle: "Italian",
+    foodStyle: "italian",
     specialties: ["pizza","calzone"],
     phone: "+34-914857993",
     menu: "/images/fratelli-figurato-menu.png",

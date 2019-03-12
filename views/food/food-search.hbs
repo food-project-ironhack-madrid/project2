@@ -1,0 +1,38 @@
+<h2>Restaurants with: {{search}}</h2>
+<ul>
+    {{#each restaurants}}
+        <li><a href="/restaurant/details/{{id}}">{{name}}</a></li>
+    {{/each}}
+</ul>
+
+<h2>Recipes:</h2>
+{{#each result}}
+
+<p>{{this.recipe.label}}</p>
+<img src="{{this.recipe.image}}">
+<p><a href="{{this.recipe.url}}">View</a></p>
+<p>Calories:</p>
+<p>{{this.recipe.calories}} kcal</p>
+<p>Fat:</p>
+<p>{{this.recipe.totalNutrients.FAT.quantity}}</p>
+<p>Sugar:</p>
+<p>{{this.recipe.totalNutrients.SUGAR.quantity}}</p>
+<p>Protein:</p>
+<p>{{this.recipe.totalNutrients.PROCNT.quantity}}</p>
+<p>Carbohydrates:</p>
+<p>{{this.recipe.totalNutrients.CHOCDF.quantity}}</p>
+
+<p>Health Labels:</p>
+<ul>
+{{#each this.recipe.healthLabels}}
+        <li>{{this}}</li>
+{{/each}}
+</ul>
+<p>Diet Labels:</p>
+<ul>
+{{#each this.recipe.dietLabels}}
+        <li>{{this}}</li>
+{{/each}}
+</ul>
+
+{{/each}}

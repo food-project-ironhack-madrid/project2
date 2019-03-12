@@ -2,32 +2,32 @@
 {{!-- Falta implementar ruta de action --}}
 <form action="/restaurant/add" method="POST" id="form-container"> 
   <label for="name">Restaurant Name</label>
-  <input id="name" type="text" name="name" placeholder="eg: Potato Factory">
+  <input id="name" type="text" name="name" placeholder="eg: Potato Factory" required>
   <br>
   <label for="description">Description</label>
-  <input id="description" type="text" name="description" placeholder="eg: Potato Factory">
+  <input id="description" type="text" name="description" placeholder="eg: Potato Factory" required>
   <br>
   <label for="address">Address</label>
-  <input id="address" type="text" name="address" placeholder="eg: Calle Mayor, 2">
+  <input id="address" type="text" name="address" placeholder="eg: Calle Mayor, 2" required>
   <br>
   <label for="location">Location</label>
-  <input id="latitude" type="text" name="latitude" placeholder="latitude">
-  <input id="longitude" type="text" name="longitude" placeholder="longitude">  
+  <input id="latitude" type="text" name="latitude" placeholder="latitude" required>
+  <input id="longitude" type="text" name="longitude" placeholder="longitude" required>  
   <br>
   <label for="foodStyle">Food Style</label>
-  <input id="foodStyle" type="text" name="foodStyle" placeholder="eg: Mexican">
+  <input id="foodStyle" type="text" name="foodStyle" placeholder="eg: Mexican" required>
   <br>
   <label for="specialties">Specialties</label>
-  <input id="specialties" type="text" name="specialties" placeholder="eg: Tacos, Burritos">
+  <input id="specialties" type="text" name="specialties" placeholder="eg: Tacos, Burritos" required>
   <br>
   <label for="phone">Phone Number</label>
-  <input id="phone" type="text" name="phone" placeholder="eg: 912323203">
+  <input id="phone" type="text" name="phone" placeholder="eg: 912323203" required>
   <br>
   <label for="menu">Menu Image</label>
-  <input id="menu" type="file" name="menu" placeholder="">
+  <input id="menu" type="file" name="menu" placeholder="" required>
   <br>
   <label for="website">Website</label>
-  <input id="website" type="text" name="website" placeholder="www.hello.com">
+  <input id="website" type="text" name="website" placeholder="www.hello.com" required>
   <br>
   {{#if message }}
     <div class="error-message">{{ message }}</div>

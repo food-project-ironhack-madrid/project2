@@ -1,15 +1,6 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-
-// const {Schema, model} = require("mongoose");
-// // Esto es igual a lo que hacemos siempre que es:
-// /*
-//   const mongoose = require("mongoose");
-//   const Schema = mongoose.Schema;
-// */
-
-
 const userSchema = new Schema({
   username: String,
   password: String,

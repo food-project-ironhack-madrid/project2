@@ -9,6 +9,7 @@ const restSchema = new Schema({
   location: {type: {type: String}, coordinates: [Number]},
   foodStyle: String,
   specialties: [String],
+  healthLabels: [String],
   phone: String,
   menu: String,
   website: String,
