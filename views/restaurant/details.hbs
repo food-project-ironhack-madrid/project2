@@ -1,0 +1,31 @@
+<h2>Restaurant Details</h2>
+<section id="restaurant-container">
+    <p>{{restaurant.name}}</p><br>
+    <p>{{restaurant.description}}</p><br>
+    <p>{{restaurant.address}}</p><br>
+    <p>{{restaurant.location}}</p><br>
+    <p>{{restaurant.foodStyle}}</p><br>
+    <ul>
+        {{#each restaurant.specialties}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>    
+    <p>{{restaurant.phone}}</p><br>
+    <p>{{restaurant.menu}}</p><br>
+    <p>{{restaurant.website}}</p><br>
+</section>
+
+<h2>Add Review</h2>
+<form action="/restaurant/details/:id" method="POST" id="form-container"> 
+  <label for="review-title">Review Title</label>
+  <input id="review-title" type="text" name="review-title" placeholder="eg: I loved Potato Factory!">
+  <br>
+  <label for="review-text">Review Text</label>
+  <input id="review-text" type="text" name="review-text" placeholder="eg: Your review text">
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <br><br>
+  <button id="add-review">Add Your Review</button>
+</form>

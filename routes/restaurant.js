@@ -1,10 +1,10 @@
-const express = require("express");
-const Restaurant = require("../models/Restaurant");
+const express = require("express")
+const router = express.Router()
 
-const router = express.Router();
+const Restaurant = require("../models/Restaurant")
 
 router.get("/add", (req, res, next) => {
-  res.render("restaurant/add", { "message": req.flash("error") });
+  res.render("restaurant/add", { "message": req.flash("error") })
 })
 
 router.post("/add", (req, res, next) => {
@@ -22,4 +22,19 @@ newRestaurant.save()
 .catch(err => next(err))
 })
 
-module.exports = router;
+router.get("/details/:id", (req, res, next) => {
+  console.log(req.params.id)
+
+  Restaurant.findById(req.params.id)
+    .then(restaurant=> {
+      console.log(restaurant)
+      res.render("restaurant/details", {restaurant})
+    })
+    .catch(err => console.log('Error', err))
+})
+
+router.post("/details/:id", (req, res, next) => {
+  console.log(req.params.id)
+})
+
+module.exports = router
