@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Restaurant = require("../models/Restaurant")
+const session    = require("express-session")
 
 
 router.get("/add", (req, res, next) => res.render("restaurant/add", { "message": req.flash("error") }))
@@ -31,6 +32,13 @@ router.get("/details/:id", (req, res, next) => {
 })
 
 router.post("/details/:id", (req, res, next) => {
+  const { comments } = req.body;
+  console.log(currentUser)
+  const username = currentUser
+  console.log(username, comments, req.params)
+  Restaurant.update({ _id: req.params.id }, { $push: { reviews: { username, comments }}})
+  .then(restaurant      => res.redirect('/'))
+  .catch(error    => console.log(error))
   console.log(req.params.id)
 })
 

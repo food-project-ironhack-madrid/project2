@@ -20,17 +20,31 @@
 </section>
 
 
-<h2>Add Review</h2>
-<form action="/restaurant/details/:id" method="POST" id="form-container">
-  <label for="review-title">Review Title</label>
-  <input id="review-title" type="text" name="review-title" placeholder="eg: I loved Potato Factory!">
+<h2>Other users constructive reviews</h2>
+{{#each restaurant.reviews}}
+<div class="review-item">
+  <p>{{comments}}</p>
+  {{!-- <span>{{user}}</span> --}}
+</div>
+{{/each}}
+
+
+
+<h2>Create a review!</h2>
+<form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
+
+
+  <label for="">Review:</label>
+  <textarea type="text" name="comments"></textarea>
   <br>
-  <label for="review-text">Review Text</label>
-  <input id="review-text" type="text" name="review-text" placeholder="eg: Your review text">
-  <br>
+
   {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
   <br><br>
-  <button id="add-review">Add Your Review</button>
+  <button id="add-review" type="submit">Add Your Review</button>
 </form>
+
+
+
+  

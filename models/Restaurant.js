@@ -13,6 +13,12 @@ const restSchema = new Schema({
   phone: String,
   menu: String,
   website: String,
+  reviews: [ 
+    {
+      username:String,
+      comments: String
+    } 
+  ]
 }, {
   timestamps: true
 });
