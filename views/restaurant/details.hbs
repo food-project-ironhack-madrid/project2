@@ -1,14 +1,26 @@
 <h2>Restaurant Details</h2>
 <section id="restaurant-container">
   <p>{{restaurant.name}}</p><br>
+  {{#if isRestaurantOwner}}
+  <form action="/restaurant/edit/{{restaurant._id}}" method="get" id="form-container">
+  <button>Edit Your Restaurant</button><br><br>
+  </form>
+  {{/if}}
+  {{#if isUserLoggedIn}}
   <form action="/restaurant/details/favorite/{{restaurant._id}}" method="POST" id="form-container">
   <button>Save as Favorite</button><br><br>
   </form>
+  {{/if}}
   <br><br>
   <img src={{restaurant.logo}}>
+  <img src={{restaurant.imgPath}}>
   <p>{{restaurant.description}}</p><br>
   <p>{{restaurant.address}}</p><br>
-  <p>{{restaurant.location}}</p><br>
+  <ul>
+    {{#each restaurant.healthLabel}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
   <p>{{restaurant.foodStyle}}</p><br>
   <ul>
     {{#each restaurant.specialties}}

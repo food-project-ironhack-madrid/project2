@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: String,
   password: String,
   email: String,
-  favorites: [String],
+  favorites: [Object],
   role: {
     type: String,
     enum: ['RESTAURANT', 'FOODTASTER'],
