@@ -1,19 +1,14 @@
 const express = require("express")
 const router = express.Router()
-
 const Restaurant = require("../models/Restaurant")
 
-router.get("/add", (req, res, next) => {
-  res.render("restaurant/add", { "message": req.flash("error") })
-})
+
+router.get("/add", (req, res, next) => res.render("restaurant/add", { "message": req.flash("error") }))
 
 router.post("/add", (req, res, next) => {
-  const {name,logo, description,  address, latitude, longitude, foodStyle, specialties, healthLabels, phone, menu, website} = req.body
+const {name,logo, description,  address, latitude, longitude, foodStyle, specialties, healthLabels, phone, menu, website} = req.body
 
-  let location = {
-      type: "Point",
-      coodinates: [longitude, latitude]
-  }
+let location = {type: "Point", coodinates: [longitude, latitude]}
 
 const newRestaurant = new Restaurant({name,logo, description, address, location, foodStyle, specialties, healthLabels, phone, menu, website})
 
@@ -22,8 +17,10 @@ newRestaurant.save()
 .catch(err => next(err))
 })
 
+
+//from index to details of one restaurant
 router.get("/details/:id", (req, res, next) => {
-  console.log(req.params.id)
+   console.log(req.params.id)
 
   Restaurant.findById(req.params.id)
     .then(restaurant=> {
@@ -38,11 +35,22 @@ router.post("/details/:id", (req, res, next) => {
 })
 
 
+
+
 router.get("/show", (req,res,next) => {
   Restaurant.find()
   .then(restaurants => res.render("restaurant/show", {restaurants}))
   .catch(err => console.log(err))
-
 })
+
+
+  router.get("/menu/:id", (req, res, next) => {
+  
+    Restaurant.findById(req.params.id)
+      .then(restaurant=> {res.render("restaurant/menu", {restaurant})})
+      .catch(err => console.log('Error', err))
+    })
+  
+
 
 module.exports = router;
