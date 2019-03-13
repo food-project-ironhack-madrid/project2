@@ -11,12 +11,36 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") })
 })
 
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}))
+router.post('/login', (req, res, next) => {
+  const usernameInput = req.body.username;
+  const passwordInput = req.body.password;
+
+  if (usernameInput === '' || passwordInput === '') {
+    res.render('auth/login', {
+      errorMessage: 'Enter both username and password to log in.'
+    });
+    return;
+  }
+
+  User.findOne({ username: usernameInput }, (err, theUser) => {
+    if (err || theUser === null) {
+      res.render('auth/login', {
+        errorMessage: `There isn't an account with username ${usernameInput}.`
+      });
+      return;
+    }
+
+    if (!bcrypt.compareSync(passwordInput, theUser.password)) {
+      res.render('auth/login', {
+        errorMessage: 'Invalid password.'
+      });
+      return;
+    }
+
+    req.session.currentUser = theUser;
+    res.redirect('/');
+  });
+});
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup")
@@ -58,9 +82,20 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.get("/logout", (req, res) => {
-  req.logout()
-  res.redirect("/")
-})
+router.get('/logout', (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.redirect('/');
+    return;
+  }
+
+  req.session.destroy((err) => {
+    if (err) {
+      next(err);
+      return;
+    }
+
+    res.redirect('/');
+  });
+});
 
 module.exports = router

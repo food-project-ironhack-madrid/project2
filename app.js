@@ -60,11 +60,29 @@ app.locals.title = 'TastyMap'
 
 // Enable authentication using session + passport
 app.use(session({
-  secret: 'irongenerator',
+  secret: 'food is better',
   resave: true,
   saveUninitialized: true,
-  store: new MongoStore( { mongooseConnection: mongoose.connection })
-}))
+  cookie: { maxAge: 60000 },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
+}));
+
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.currentUserInfo = req.session.currentUser;
+    res.locals.isUserLoggedIn = true;
+    if(res.locals.currentUserInfo.role==="RESTAURANT"){
+      res.locals.restaurantRole = true
+    }
+  } else {
+    res.locals.isUserLoggedIn = false;
+  }
+  next();
+});
+
 app.use(flash())
 require('./passport')(app)
     
