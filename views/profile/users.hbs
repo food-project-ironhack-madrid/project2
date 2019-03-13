@@ -1,1 +1,9 @@
 <h2>Foodtaster</h2>
+
+<p>Username: {{currentUserInfo.username}}</p>
+<p>Role: {{currentUserInfo.role}}</p>
+<h3>Your Favorite Restaurants</h3>
+
+{{#each currentUserInfo.favorites}}
+    <li>{{this}}</li>
+{{/each}}
