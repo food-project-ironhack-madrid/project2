@@ -3,12 +3,12 @@ const router  = express.Router()
 const axios = require('axios')
 const Restaurant = require("../models/Restaurant")
 
-/* GOOGLE MAPS API */
+
 
 router.get('/', (req, res, next) => {
 
   Restaurant.find()
-  .then(restaurants =>  res.render('index', {result: JSON.stringify(restaurants)}))
+  .then(restaurants =>  res.render('index'))
   .catch(err => {console.log(err)})
 
 })

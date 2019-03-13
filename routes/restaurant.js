@@ -43,9 +43,10 @@ router.post("/details/:id", (req, res, next) => {
   .catch(error => console.log(error))
 })
 
+/* this JSON shows the GOOGLE MAPS API */
 router.get("/show", (req,res,next) => {
   Restaurant.find()
-  .then(restaurants => res.render("restaurant/show", {restaurants}))
+  .then(restaurants => res.render("restaurant/show", {restaurants, result: JSON.stringify(restaurants)}))
   .catch(err => console.log(err))
 })
 
