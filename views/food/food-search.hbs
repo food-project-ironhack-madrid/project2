@@ -11,10 +11,14 @@
     {{#each result}}
     <div class="recipe">
         <p>{{recipe.label}}</p>
-        <img src="{{recipe.image}}">
+       
+        <a href={{recipe.image}} data-lightbox={{recipe.image}}>
+  <img src={{recipe.image}} alt="">
+</a>
+
         <p><a href="{{recipe.url}}">View</a></p>
 
-        {{!-- <p>Calories:</p>
+{{!-- <p>Calories:</p>
 <p>{{this.recipe.calories}} kcal</p>
 <p>Fat:</p>
 <p>{{this.recipe.totalNutrients.FAT.quantity}}</p>
