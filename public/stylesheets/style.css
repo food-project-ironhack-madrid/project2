@@ -9,6 +9,10 @@ body img {
 a {
   color: black; }
 
+#map {
+  width: 1000px;
+  height: 500px; }
+
 #nav-bar a {
   text-decoration: none;
   font-size: 20px;

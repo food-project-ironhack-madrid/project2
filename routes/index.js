@@ -3,12 +3,18 @@ const router  = express.Router()
 const axios = require('axios')
 const Restaurant = require("../models/Restaurant")
 
+/* GOOGLE MAPS API */
 
-/* GET home page */
-router.get('/', (req, res, next) => {res.render('index')})
+router.get('/', (req, res, next) => {
+
+  Restaurant.find()
+  .then(restaurants =>  res.render('index', {result: JSON.stringify(restaurants)}))
+  .catch(err => {console.log(err)})
+
+})
+
 
 /* FOOD API */
-
 router.post('/', (req,res,next) =>{
   const search = req.body.searchFood
   const max = 6
@@ -33,6 +39,20 @@ router.post('/', (req,res,next) =>{
 }
 getRecipeInfo()
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router
 

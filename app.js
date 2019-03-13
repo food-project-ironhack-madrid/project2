@@ -58,6 +58,10 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 // default value for title local
 app.locals.title = 'TastyMap'
 
+
+//APIGOOGLE
+app.locals.apiMap=process.env.APIGOOGLE
+
 // Enable authentication using session + passport
 app.use(session({
   secret: 'food is better',
@@ -85,6 +89,7 @@ app.use((req, res, next) => {
 
 app.use(flash())
 require('./passport')(app)
+
     
 const index = require('./routes/index')
 app.use('/', index);
