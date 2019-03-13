@@ -74,6 +74,7 @@ app.use(session({
   })
 }));
 
+// Middleware to check if user is logged in and user info
 app.use((req, res, next) => {
   if (req.session.currentUser) {
     res.locals.currentUserInfo = req.session.currentUser;

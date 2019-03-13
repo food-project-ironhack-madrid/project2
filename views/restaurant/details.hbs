@@ -1,6 +1,10 @@
 <h2>Restaurant Details</h2>
 <section id="restaurant-container">
   <p>{{restaurant.name}}</p><br>
+  <form action="/restaurant/details/favorite/{{restaurant._id}}" method="POST" id="form-container">
+  <button>Save as Favorite</button><br><br>
+  </form>
+  <br><br>
   <img src={{restaurant.logo}}>
   <p>{{restaurant.description}}</p><br>
   <p>{{restaurant.address}}</p><br>
@@ -13,38 +17,29 @@
   </ul>
   <p>{{restaurant.phone}}</p><br>
   
-
   <a href='/restaurant/menu/{{restaurant.id}}'>Food Menu</a>
-
   <a href={{restaurant.website}}>Website</a>
 </section>
-
 
 <h2>Other users constructive reviews</h2>
 {{#each restaurant.reviews}}
 <div class="review-item">
+  <p>{{username}}</p>
   <p>{{comments}}</p>
   {{!-- <span>{{user}}</span> --}}
 </div>
 {{/each}}
 
-
-
-<h2>Create a review!</h2>
-<form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
-
-
-  <label for="">Review:</label>
-  <textarea type="text" name="comments"></textarea>
-  <br>
-
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <br><br>
-  <button id="add-review" type="submit">Add Your Review</button>
-</form>
-
-
-
-  
+{{#if isUserLoggedIn}}
+  <h2>Create a review!</h2>
+  <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
+    <label for="">Review:</label>
+    <textarea type="text" name="comments"></textarea>
+    <br>
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+    <br><br>
+    <button id="add-review" type="submit">Add Your Review</button>
+  </form>
+{{/if}}

@@ -10,15 +10,16 @@
 <body>
   <nav id="nav-bar">
     <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
     <a href="/restaurant/show">Restaurants</a>
-    {{#if isUserLoggedIn}}
-    <a href="/auth/logout">Logout</a>
-    <a href="/profile/users">Foodtaster</a>
-    {{/if}}
     {{#if restaurantRole}}
     <a href="/restaurant/add">New Restaurant</a>
+    {{/if}}
+    {{#if isUserLoggedIn}}
+    <a href="/profile/users">Foodtaster</a>
+    <a href="/auth/logout">Logout</a>
+    {{else}}
+    <a href="/auth/login">Login</a>
+    <a href="/auth/signup">Signup</a>
     {{/if}}
   </nav>
 
