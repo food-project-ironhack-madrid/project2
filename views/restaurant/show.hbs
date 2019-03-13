@@ -1,13 +1,25 @@
-<ul>
+
+
+<ul class="full-restaurant">
 {{#each restaurants}}
-    <li>{{name}}</li>
-    <li><img src={{logo}}></li>
-    <li>{{description}}</li>
+
+
+
+
+<div class="restaurant-info">
+
+     <a href="/restaurant/details/{{id}}">{{name}}</a>
+    <img src={{logo}}>
+    {{!-- <li>{{description}}</li>
     <li>{{foodStyle}}</li>
     <li>{{specialties}}</li>
     <li>{{phone}}</li>
-    <li><img src={{menu}}></li>
+    <li><a href='/restaurant/menu'>Food Menu</a></li>
     <li><a href={{website}}>Website</a></li>
-    <li>{{address}}</li>
+    <li>{{address}}</li> --}}
+
+ </div>
+
 {{/each}}
 </ul>
+

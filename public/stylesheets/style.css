@@ -21,4 +21,15 @@ a {
   text-align: center;
   font-size: 50px; }
 
+.full-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 50px; }
+
+.restaurant-info {
+  width: 45%;
+  margin: auto;
+  margin-bottom: 4%; }
+
 /*# sourceMappingURL=style.css.map */

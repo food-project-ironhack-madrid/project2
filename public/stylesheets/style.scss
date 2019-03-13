@@ -4,7 +4,7 @@ body {
   background-color: #f3c527;
 }
 
-body img{
+body img {
   width: 200px;
 }
 
@@ -12,16 +12,32 @@ a {
   color: black;
 }
 
-#nav-bar a{
+#nav-bar a {
   text-decoration: none;
   font-size: 20px;
   padding: 40px;
 }
 
-#searchFood{
+#searchFood {
   width: 500px;
   height: 100px;
   border: 0px;
   text-align: center;
   font-size: 50px;
+}
+
+.full-restaurant {
+  
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.restaurant-info{
+  width: 45%;
+  margin: auto;
+  margin-bottom: 4%;
+
+  
 }

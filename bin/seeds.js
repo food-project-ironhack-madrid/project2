@@ -28,7 +28,7 @@ let restaurants = [
   {
     name: "Viva Burger",
     logo: "/images/viva-burger-logo.png",
-    description: "EATING IS A DAILY ACT OF LOVE. Viva Burger is the result of years of work taking care of your health and that of our beloved planet earth. We bet on the taste in our ingredients without incurring any animal suffering. Eat conscious and you will be much happier.",
+    description: "Viva Burger is the result of years of work taking care of your health and that of our beloved planet earth. We bet on the taste in our ingredients without incurring any animal suffering.",
     address: "Costanilla de San Andrés, 16. 28005 Madrid, Spain",
     location:{type: "Point", coordinates: ["40.4138258","-3.7116641"]},
     foodStyle: "Vegan",
@@ -40,7 +40,7 @@ let restaurants = [
   {
     name: "Honest greens",
     logo: "/images/honest-greens-logo.jpeg",
-    description: "Eat real food.Eat like your ancestors. More vegetables, free-range meat, whole grains and seeds. Embrace the seasons. Let nature decide what’s on the menu.",
+    description: "Eat real food. Eat like your ancestors. More vegetables, free-range meat, whole grains and seeds. Let nature decide what’s on the menu.",
     address: "Paseode la Castellana, 8928046",
     location:{type: "Point", coordinates: ["40.4457662","-3.691435"]},
     foodStyle: "Healthy cuisine",

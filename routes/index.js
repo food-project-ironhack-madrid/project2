@@ -5,9 +5,9 @@ const Restaurant = require("../models/Restaurant")
 
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index')
-})
+router.get('/', (req, res, next) => {res.render('index')})
+
+/* FOOD API */
 
 router.post('/', (req,res,next) =>{
   const search = req.body.searchFood
@@ -23,7 +23,7 @@ router.post('/', (req,res,next) =>{
             { specialties: search }
           ]
         })
-        .then(restaurants =>{
+        .then(restaurants => {
         console.log(recipes.data.hits.recipe)
         console.log(restaurants)
         res.render('food/food-search', {result:recipes.data.hits, search, restaurants})
@@ -36,7 +36,3 @@ getRecipeInfo()
 
 module.exports = router
 
-$and: [
-  { $or: [{a: 1}, {b: 1}] },
-  { $or: [{c: 1}, {d: 1}] }
-]

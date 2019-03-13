@@ -1,27 +1,48 @@
 <h2>Add Restaurant</h2>
 {{!-- Falta implementar ruta de action --}}
-<form action="/restaurant/add" method="POST" id="form-container"> 
-  <label for="name">Restaurant Name</label>
-  <input id="name" type="text" name="name" placeholder="eg: Potato Factory" required>
+<form action="/restaurant/add" method="POST" id="form-container">
+  <label for="name">Your Name:</label>
+  <input id="name" type="text" name="name" placeholder=" Potato Factory" required>
   <br>
-  <label for="description">Description</label>
-  <input id="description" type="text" name="description" placeholder="eg: Potato Factory" required>
+  <label for="description">Your story:</label>
+  <input id="description" type="text" name="description" placeholder="who are you" required>
   <br>
-  <label for="address">Address</label>
-  <input id="address" type="text" name="address" placeholder="eg: Calle Mayor, 2" required>
+  <label for="address">Your Address:</label>
+  <input id="address" type="text" name="address" placeholder=" Calle Mayor, 2" required>
   <br>
-  <label for="location">Location</label>
+  <label for="location">Your Location:</label>
   <input id="latitude" type="text" name="latitude" placeholder="latitude" required>
-  <input id="longitude" type="text" name="longitude" placeholder="longitude" required>  
+  <input id="longitude" type="text" name="longitude" placeholder="longitude" required>
   <br>
-  <label for="foodStyle">Food Style</label>
-  <input id="foodStyle" type="text" name="foodStyle" placeholder="eg: Mexican" required>
+  <label for="foodStyle">What Food Style?</label>
+  <input id="foodStyle" type="text" name="foodStyle" placeholder=" Mexican" required>
   <br>
-  <label for="specialties">Specialties</label>
-  <input id="specialties" type="text" name="specialties" placeholder="eg: Tacos, Burritos" required>
+  <label for="specialties">What are your specialties?</label>
+  <input id="specialties" type="text" name="specialties" placeholder=" Tacos, Burritos" required>
+  <br>
+
+  <label for="healthLabel">Any Health Label?</label> <br>
+  <input type="checkbox" name="healthLabel" value="vegan" /> vegan
+  <input type="checkbox" name="healthLabel" value="vegetarian" /> vegetarian
+  <input type="checkbox" name="healthLabel" value="paleo" /> paleo
+  <input type="checkbox" name="healthLabel" value="dairy-free" /> dairy-free
+  <input type="checkbox" name="healthLabel" value="gluten-free" /> gluten-free
+  <input type="checkbox" name="healthLabel" value="wheat-free" /> wheat-free
+  <input type="checkbox" name="healthLabel" value="fat-free" /> dairy-free
+  <input type="checkbox" name="healthLabel" value="low-sugar" /> low-sugar
+  <input type="checkbox" name="healthLabel" value="peanut-free" /> peanut-free
+  <input type="checkbox" name="healthLabel" value="wheat-free" /> wheat-free
+  <input type="checkbox" name="healthLabel" value="fat-free" /> dairy-free
+  <input type="checkbox" name="healthLabel" value="low-sugar" /> low-sugar
+  <input type="checkbox" name="healthLabel" value="peanut-free" /> peanut-free
+  <input type="checkbox" name="healthLabel" value="tree-nut-free" /> tree-nut-free
+  <input type="checkbox" name="healthLabel" value="soy-free" /> soy-free
+  <input type="checkbox" name="healthLabel" value="fish-free" /> fish-free
+  <input type="checkbox" name="healthLabel" value="shellfish-free" /> shellfish-free
+
   <br>
   <label for="phone">Phone Number</label>
-  <input id="phone" type="text" name="phone" placeholder="eg: 912323203" required>
+  <input id="phone" type="text" name="phone" placeholder="+34 912323203" required>
   <br>
   <label for="menu">Menu Image</label>
   <input id="menu" type="file" name="menu" placeholder="" required>
@@ -30,7 +51,7 @@
   <input id="website" type="text" name="website" placeholder="www.hello.com" required>
   <br>
   {{#if message }}
-    <div class="error-message">{{ message }}</div>
+  <div class="error-message">{{ message }}</div>
   {{/if}}
 
   <br><br>
@@ -38,4 +59,3 @@
   <button id="create-rest">Create new Restaurant</button>
 
 </form>
-

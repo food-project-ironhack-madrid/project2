@@ -3,7 +3,9 @@
   <p> Hello, {{ currentUserInfo.username }}. </p>
 {{/if}}
 
+
+{{!-- name="searchFood" : is the paramater you use for the req.body --}}
 <form action="/" method="POST" id="search-container"> 
   <label for="searchFood"></label>
-  <input id="searchFood" type="text" name="searchFood" placeholder="type your search here">
+  <input id="searchFood" type="text" name="searchFood" placeholder="type your fave food "> 
 </form>
