@@ -1,49 +1,47 @@
-<h2>Restaurants with: {{search}}</h2>
-<ul>
-    {{#each restaurants}}
-    <li><a href="/restaurant/details/{{id}}">{{name}}</a></li>
-    {{/each}}
-</ul>
+<div>
+    <h2>Restaurants with: {{search}} food</h2>
+    <ul>
+        {{#each restaurants}}
+            <li><a href="/restaurant/details/{{id}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
 
 
-<h2>Recipes:</h2>
-<div class="full-recipe">
-    {{#each result}}
-    <div class="recipe">
-        <p>{{recipe.label}}</p>
-       
-        <a href={{recipe.image}} data-lightbox={{recipe.image}}>
-  <img src={{recipe.image}} alt="">
-</a>
+    <h1 class="recipe">Recipes:</h1>
+    <div class="full-restaurant">
+        {{#each result}}
+            <div class="restaurant-info">
+                
+                <a  href={{recipe.image}} data-lightbox={{recipe.image}}>
+                <img src={{recipe.image}} alt="">
+                </a>
+               
 
-        <p><a href="{{recipe.url}}">View</a></p>
+                <h2><a href="{{recipe.url}}">{{recipe.label}}</a></h2>
 
-{{!-- <p>Calories:</p>
-<p>{{this.recipe.calories}} kcal</p>
-<p>Fat:</p>
-<p>{{this.recipe.totalNutrients.FAT.quantity}}</p>
-<p>Sugar:</p>
-<p>{{this.recipe.totalNutrients.SUGAR.quantity}}</p>
-<p>Protein:</p>
-<p>{{this.recipe.totalNutrients.PROCNT.quantity}}</p>
-<p>Carbohydrates:</p>
-<p>{{this.recipe.totalNutrients.CHOCDF.quantity}}</p> --}}
+<div class= "food-container">
+    <div class= "food-container-1">
+                <p>Health Labels:</p>
 
-        <p>Health Labels:</p>
-        <ul>
-            {{#each recipe.healthLabels}}
-            <li>{{this}}</li>
+                <ul>
+                    {{#each recipe.healthLabels}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                </div>
+<div class= "food-container-2">
+                <p>Diet Labels:</p>
 
-            {{/each}}
-        </ul>
-        <p>Diet Labels:</p>
-        <ul>
-            {{#each recipe.dietLabels}}
-            <li>{{this}}</li>
-            {{/each}}
-        </ul>
+                <ul>
+                    {{#each recipe.dietLabels}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                </div>
+</div>
+            </div>
+
+        {{/each}}
     </div>
 
-
-    {{/each}}
 </div>
