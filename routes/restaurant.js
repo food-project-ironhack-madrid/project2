@@ -48,7 +48,7 @@ router.get("/details/:id", (req, res, next) => {
       if(req.session.currentUser && req.session.currentUser._id === restaurant.owner){
         isRestaurantOwner = true
       }
-      res.render("restaurant/details", {restaurant, isRestaurantOwner})
+      res.render("restaurant/details", {restaurant, isRestaurantOwner, result: JSON.stringify([restaurant])})
     })
     .catch(err => console.log('Error', err))
 })

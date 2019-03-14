@@ -1,0 +1,97 @@
+#main-container {
+    display: grid;
+    max-height: calc(100vh - 3.5rem);
+}
+
+#restaurant-container{
+    display: flex;  
+    flex-flow: column;
+    font-weight: bold;
+    grid-column: 1;
+    overflow-y: scroll;
+    max-height: calc(100vh - 3.5rem);
+    text-align: center;
+}
+
+.restaurant-logo{
+    object-fit: cover;
+    width: 160vh;
+    height: 50vh;
+}
+
+#restaurant-menu{
+    width: 300px;
+} 
+
+#restaurant-name{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13vh;
+}
+
+#restaurant-description{
+    text-align: center;
+    padding: 0 3rem;
+    opacity: .6;
+    font-style: italic;
+    margin-bottom: 2rem;
+    letter-spacing: .025rem;
+}
+
+#info-container{
+    display: grid;
+    padding: 3rem 8rem 3rem 15rem;
+    font-size: 2vh;
+    text-align: left;
+}
+
+#health-label{
+    grid-column: 1;
+}
+
+#contact-info{
+    grid-column: 2;
+}
+
+#food-style{
+    text-align: center;
+    font-size: 3vh;
+    padding: 10px;
+}
+
+.icons{
+    width: 30px;
+    padding-right: 15px;
+}
+
+.checks{
+    width: 30px;
+    padding-right: 15px;
+}
+
+#map-container {
+    grid-column: 2;
+    width: 400px;
+    height: 700px;
+}
+
+#menu-container {
+    padding-bottom: 50px;
+}
+
+#menu-container p{
+    padding: 20px;
+    background: red;
+}
+
+#map{
+    height: 700px;
+}
+
+.list-individual{
+    padding: 10px 0px;
+}
+
+#reviews-header{
+    padding-bottom: 40px;
+}

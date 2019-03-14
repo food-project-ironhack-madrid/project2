@@ -1,79 +1,68 @@
-<h1>{{restaurant.name}}</h1>
-<section id="restaurant-container">
-  
-  {{#if isRestaurantOwner}}
-  <form action="/restaurant/edit/{{restaurant._id}}" method="get" id="form-container">
-  <button>Edit Your Restaurant</button><br><br>
-  </form>
-  {{/if}}
+<section id="main-container">
+  <article id="restaurant-container">
+    <a href={{restaurant.logo}} data-lightbox={{restaurant.logo}}>
+    <img class="restaurant-logo" src={{restaurant.logo}}></a>
+    
+    <h1 id="restaurant-name">{{restaurant.name}}</h1>
+    <h3 id="food-style">{{restaurant.foodStyle}}</h3>
+    <p id="restaurant-description">{{restaurant.description}}</p>
+
+    {{#if isRestaurantOwner}}
+      <form action="/restaurant/edit/{{restaurant._id}}" method="get" id="form-container">
+      <button>Edit Your Restaurant</button>
+      </form>
+    {{/if}}
+    {{#if isUserLoggedIn}}
+      <form action="/restaurant/details/favorite/{{restaurant._id}}" method="POST" id="form-container">
+      <button>Save as Favorite</button>
+      </form>
+    {{/if}}
+  <section id="info-container">
+    <section id="health-label">
+      <ul>
+        {{#each restaurant.healthLabel}}
+          <li class= "list-individual"><img class="checks" src="/images/checked.svg">{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+    <section id="contact-info">
+      <p class= "list-individual"><img class="icons" src="/images/location.svg">Location: {{restaurant.address}}</p>
+      <p class= "list-individual"><img class="icons" src="/images/phone.svg"><a href= tel:{{restaurant.phone}}>{{restaurant.phone}}</a></p>
+      <p class= "list-individual"><img class="icons" src="/images/website.svg"><a href={{restaurant.website}}>Web page</a></p>
+    </section>
+  </section>
+
+  <p id="menu-container"> <a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}>Food Menu</a></p>
+
+  <p id="reviews-header">Our FOOD LOVER experiences, critiques, reviews and mucho love: </p>
+
+  <div class="review-item">
+  {{#each restaurant.reviews}}
+    <p>{{username}}: {{comments}}</p>
+  {{/each}}
+  </div>
+
   {{#if isUserLoggedIn}}
-  <form action="/restaurant/details/favorite/{{restaurant._id}}" method="POST" id="form-container">
-  <button>Save as Favorite</button><br><br>
-  </form>
+    <h2>What does your heart, mind and soul think about this restaurant?</h2>
+    <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
+      <label for="">Be honest our we will hunt you!</label>
+      <textarea type="text" name="comments"></textarea>
+      <br>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br><br>
+      <button id="add-review" type="submit">Send your review</button>
+    </form>
   {{/if}}
-  <br><br>
-   <a href={{restaurant.logo}} data-lightbox={{restaurant.logo}}>
-  <img src={{restaurant.logo}} alt=""></a>
-  <img src={{restaurant.imgPath}}>
+  </article>
 
-  <h3>Our philosophy: "{{restaurant.description}}"</h3><br>
-  <h3> Foodstyle: {{restaurant.foodStyle}}</h3>
-  <ul><p></p>
-    {{#each restaurant.healthLabel}}
-    <li>{{this}}</li>
-    {{/each}}
-  </ul>
- 
-  {{!-- <ul>
-    {{#each restaurant.specialties}}
-    <li>{{this}}</li>
-    {{/each}}
-  </ul> --}}
-<a href=tel:{{restaurant.phone}}>Click to Call</a><br>
-<a href={{restaurant.website}}>Web page</a>
-<h3>Location: {{restaurant.address}}</h3><br>
-
-
-  {{!-- <a href='/restaurant/menu/{{restaurant.id}}'>Explore food menu</a> --}}
-
-  <h3>Explore food menu</h3>
-<a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}><img src={{restaurant.menu}} alt=""></a>
-
+  <article id="map-container">
+    <div id="map"></div>
+  </article>
 </section>
 
-{{#if isUserLoggedIn}}
-  <h2>What does your heart, mind and soul think about this restaurant?</h2>
-  <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
-    <label for="">Be honest our we will hunt you!</label>
-    <textarea type="text" name="comments"></textarea>
-    <br>
-    {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
-    <br><br>
-    <button id="add-review" type="submit">Send your review</button>
-  </form>
-{{/if}}
-
-
-<h2>Our FOOD LOVER experiences, critiques, reviews and mucho love: </h2>
-{{#each restaurant.reviews}}
-<div class="review-item">
-  <p>{{username}}: {{comments}}</p>
-{{/each}}
-</div>
-
-
-
-
-<div id="map"></div>
-
-
-<script>
-  
-  console.log(window)
-  window.result = {{{result}}}
-  const result2 = {{{result}}}
-
-</script>
-
+  <script>
+    window.result = {{{result}}}
+    console.log(window.result)
+  </script>

@@ -1,58 +1,51 @@
-<h1>Add Restaurant</h1>
-<form action="/restaurant/add" method="post" enctype="multipart/form-data" id="form-container">
-  <h3><label for="name">Your Name:</label>
-  <input id="name" type="text" name="name" placeholder=" Potato Factory" required>
-  <br>
-  <label for="description">Your story:</label>
-  <input id="description" type="text" name="description" placeholder="who are you" required>
-  <br>
-  <label for="address">Your Address:</label>
-  <input id="address" type="text" name="address" placeholder=" Calle Mayor, 2" required>
-  <br>
-  <label for="location">Your Location:</label>
-  <input id="latitude" type="text" name="latitude" placeholder="latitude" required>
-  <input id="longitude" type="text" name="longitude" placeholder="longitude" required>
-  <br>
-  <label for="foodStyle">What Food Style?</label>
-  <input id="foodStyle" type="text" name="foodStyle" placeholder=" Mexican" required>
-  <br>
-  <label for="specialties">What are your specialties?</label>
-  <input id="specialties" type="text" name="specialties" placeholder=" Tacos, Burritos" required>
-  <br>
-
-  <label for="healthLabel">Any Health Label?</label> <br></h3>
-
-  <h4><input type="checkbox" name="healthLabel" value="vegan" /> Vegan
-  <input type="checkbox" name="healthLabel" value="vegetarian" /> Vegetarian
-  <input type="checkbox" name="healthLabel" value="paleo" /> Paleo
-  <input type="checkbox" name="healthLabel" value="dairy-free" /> Dairy-free
-  <input type="checkbox" name="healthLabel" value="gluten-free" /> Gluten-free
-  <input type="checkbox" name="healthLabel" value="wheat-free" /> Wheat-free
-  <input type="checkbox" name="healthLabel" value="low-sugar" /> Low-sugar
-  <input type="checkbox" name="healthLabel" value="peanut-free" /> Peanut-free
-  <input type="checkbox" name="healthLabel" value="tree-nut-free" /> Tree-nut-free
-  <input type="checkbox" name="healthLabel" value="soy-free" /> Soy-free
-  <input type="checkbox" name="healthLabel" value="fish-free" /> Fish-free
-  <input type="checkbox" name="healthLabel" value="shellfish-free" /> Shellfish-free
-  <input type="checkbox" name="healthLabel" value="plant based" /> Plant based
-</h4><br>
-
-  <h3>
-  <label for="phone">Phone Number</label>
-  <input id="phone" type="text" name="phone" placeholder="+34 912323203" required>
-  <br>
-  <label for="menu">Logo</label>
-  <input id="menu" type="file" name="photo" placeholder="" required>
-  <br>
-  <label for="website">Website</label>
-  <input id="website" type="text" name="website" placeholder="www.hello.com" required>
-  <br>
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button id="create-rest">Create new Restaurant</button>
-</h3>
-</form>
+<section id="add-container">
+  <h1 id="add-title">Add Restaurant</h1>
+    <form action="/restaurant/add" method="post" enctype="multipart/form-data" id="form-container">
+      <h3>
+      <article id= "input-container"><label for="name">Your Name:</label>
+      <input id="name" type="text" name="name" placeholder=" Potato Factory" required></article>
+      <br>
+      <article id="input-container"><label for="description">Your Story:</label>
+      <input id="description" type="text" name="description" placeholder="who are you" required></article >
+      <br>
+      <article id="input-container"><label for="address">Your Address:</label>
+      <input id="address" type="text" name="address" placeholder=" Calle Mayor, 2" required></article >
+      <br>
+      <article id="input-container"><label for="location">Your Location:</label>
+      <input id="latitude" type="text" name="latitude" placeholder="latitude" required>
+      <input id="longitude" type="text" name="longitude" placeholder="longitude" required></article >
+      <br>
+      <article id="input-container"><label for="foodStyle">What Food Style?</label>
+      <input id="foodStyle" type="text" name="foodStyle" placeholder=" Mexican" required></article >
+      <br>
+      <article id="input-container"><label for="specialties">What Are Your Specialties?</label>
+      <input id="specialties" type="text" name="specialties" placeholder=" Tacos, Burritos" required></article >
+      <br>
+      <label>Any Health Label?</label>
+      <section id= "checks-container">
+        <span><input type="checkbox" name="healthLabel" value="vegan" /> Vegan</span>
+        <span><input type="checkbox" name="healthLabel" value="vegetarian" /> Vegetarian</span>
+        <span><input type="checkbox" name="healthLabel" value="paleo" /> Paleo</span>
+        <span><input type="checkbox" name="healthLabel" value="dairy-free" /> Dairy-free</span>
+        <span><input type="checkbox" name="healthLabel" value="gluten-free" /> Gluten-free</span>
+        <span><input type="checkbox" name="healthLabel" value="wheat-free" /> Wheat-free</span>
+        <span><input type="checkbox" name="healthLabel" value="low-sugar" /> Low-sugar</span>
+        <span><input type="checkbox" name="healthLabel" value="peanut-free" /> Peanut-free</span>
+      </section>
+      <br>
+      <article id="input-container"><label for="phone">Phone Number</label>
+      <input id="phone" type="text" name="phone" placeholder="+34 912323203" required></article>
+      <br>
+      <article id="input-container"><label for="menu">Logo</label>
+      <input id="menu" type="file" name="photo" placeholder="" required></article>
+      <br>
+      <article id="input-container"><label for="website">Website</label>
+      <input id="website" type="text" name="website" placeholder="www.hello.com" required></article>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br>
+      <button id="create-rest">Create new Restaurant</button>
+    </h3>
+  </form>
+</main-container>

@@ -60,7 +60,7 @@ let restaurants = [
     location:{type: "Point", coordinates: [40.4128929,-3.697243]},
     foodStyle: "spanish",
     specialties: ["oyster ","artichokes","tuna","steak tartare","shrimp"],
-    healthLabel: [] ,
+    healthLabel: ["gluten-free","peanut-free","tree-nut-free"] ,
     phone: "+34-910244798",
     menu: "/images/triciclo-menu.png",
     website: "http://eltriciclo.es/triciclo/"
@@ -73,7 +73,7 @@ let restaurants = [
     location:{type: "Point", coordinates: [40.411229,-3.707142]},
     foodStyle: "mexican",
     specialties: ["tacos"," burritos","guacamole","nachos","quesadillas"],
-    healthLabel: [] ,
+    healthLabel: ["tree-nut-free","peanut-free","fish-free"],
     phone: "+34-914296449",
     menu: "/images/sahuaro-menu.png",
     website: "http://sahuaromadrid.com/"
@@ -85,8 +85,8 @@ let restaurants = [
     address: "Calle de Alonso Cano, 37, Madrid, Spain",
     location:{type: "Point", coordinates: [40.438911,-3.697848]},
     foodStyle: "italian",
-    specialties: ["pizza","calzone"],
-    healthLabel: [] ,
+    specialties: ["pizza", "calzone"],
+    healthLabel: ["tree-nut-free","peanut-free","fish-free"] ,
     phone: "+34-914857993",
     menu: "/images/fratelli-figurato-menu.png",
     website: "https://www.fratellifigurato.es/"

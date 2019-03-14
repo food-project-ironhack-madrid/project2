@@ -6,6 +6,8 @@ const userSchema = new Schema({
   password: String,
   email: String,
   favorites: [Object],
+  imgName: String,
+  imgPath: String,
   role: {
     type: String,
     enum: ['RESTAURANT', 'FOODTASTER'],

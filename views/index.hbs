@@ -1,19 +1,16 @@
-<h1>{{title}}</h1>
+<h1 id="main-title">{{title}}</h1>
 {{#if isUserLoggedIn}}
   <p> Hello {{ currentUserInfo.username }}, </p>
 {{/if}}
 
-
-{{!-- name="searchFood" : is the paramater you use for the req.body --}}
 <form action="/" method="POST" id="search-container"> 
   <label for="searchFood"></label>
-  <input id="searchFood" type="text" name="searchFood" placeholder="type your fave food "> 
+  <input id="searchFood" type="text" name="searchFood" autocomplete="off" spellcheck='false' autocorrect='off' placeholder="type your fave food "> 
+  <span class="bar"></span>
 </form>
-
 
 <script>
   window.onload = () => {
     document.getElementById('searchFood').focus();
   }
-
 </script>

@@ -207,15 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
           ]
     })
 
-
-  
-    const myMarker = new google.maps.Marker({
-        position: madridCenter,
-        map: map,
-        title: "I'm here"
-    })
-////////////////////////////////
-
 if (navigator.geolocation) {
 
   navigator.geolocation.getCurrentPosition((position) => {
@@ -228,7 +219,7 @@ if (navigator.geolocation) {
     const myMarkerPosition = new google.maps.Marker({
       position: myPosition,
       map: map,
-      title: "Aquí estoy yo!"
+      title: "You are here!"
     })
 
     console.log("posición", myPosition)
@@ -257,7 +248,6 @@ if (navigator.geolocation) {
             })
             markers.push(marker)
         });
-
     }
     placeRestaurants(window.result)
 })

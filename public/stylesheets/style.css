@@ -90,10 +90,21 @@ button {
   width: 100%;
   height: 500px; }
 
+#nav-bar {
+  padding: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: burlywood;
+  height: 3.5rem;
+  box-sizing: border-box; }
+
 #nav-bar a {
   text-decoration: none;
   font-size: 20px;
-  padding: 40px; }
+  padding-left: 30px; }
+  #nav-bar a:hover {
+    color: #006054; }
 
 .box {
   box-shadow: 0px 1px 6px 0px rgba(50, 50, 50, 0.2);
@@ -113,11 +124,43 @@ button {
     padding: 2rem; }
 
 #searchFood {
-  width: 500px;
-  height: 100px;
-  border: 0px;
-  text-align: center;
-  font-size: 50px; }
+  font-size: 110px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 900px;
+  border: none;
+  border-bottom: 1px grey; }
+
+#searchFood:focus {
+  outline: none; }
+
+#main-title {
+  position: absolute;
+  bottom: 30px;
+  right: 30px; }
+
+.bar {
+  position: relative;
+  display: block;
+  width: 900px; }
+
+.bar:before, .bar:after {
+  content: '';
+  height: 5px;
+  width: 0;
+  position: absolute;
+  background: #ebab22;
+  transition: 0.2s ease all; }
+
+.bar:before {
+  left: 50%; }
+
+.bar:after {
+  right: 50%; }
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%; }
 
 .full-restaurant {
   display: flex;
@@ -132,5 +175,85 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+#main-container {
+  display: grid;
+  max-height: calc(100vh - 3.5rem); }
+
+#restaurant-container {
+  display: flex;
+  flex-flow: column;
+  font-weight: bold;
+  grid-column: 1;
+  overflow-y: scroll;
+  max-height: calc(100vh - 3.5rem);
+  text-align: center; }
+
+.restaurant-logo {
+  object-fit: cover;
+  width: 160vh;
+  height: 50vh; }
+
+#restaurant-menu {
+  width: 300px; }
+
+#restaurant-name {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13vh; }
+
+#restaurant-description {
+  text-align: center;
+  padding: 0 3rem;
+  opacity: .6;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: .025rem; }
+
+#info-container {
+  display: grid;
+  padding: 3rem 8rem 3rem 15rem;
+  font-size: 2vh;
+  text-align: left; }
+
+#health-label {
+  grid-column: 1; }
+
+#contact-info {
+  grid-column: 2; }
+
+#food-style {
+  text-align: center;
+  font-size: 3vh;
+  padding: 10px; }
+
+.icons {
+  width: 30px;
+  padding-right: 15px; }
+
+.checks {
+  width: 30px;
+  padding-right: 15px; }
+
+#map-container {
+  grid-column: 2;
+  width: 400px;
+  height: 700px; }
+
+#menu-container {
+  padding-bottom: 50px; }
+
+#menu-container p {
+  padding: 20px;
+  background: red; }
+
+#map {
+  height: 700px; }
+
+.list-individual {
+  padding: 10px 0px; }
+
+#reviews-header {
+  padding-bottom: 40px; }
 
 /*# sourceMappingURL=style.css.map */

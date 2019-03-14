@@ -1,6 +1,6 @@
 <h2>Signup</h2>
 
-<form action="/auth/signup" method="POST" id="form-container">
+<form action="/auth/signup" method="POST"  enctype="multipart/form-data" id="form-container">
   <label for="username">Username</label>
   <input id="username" type="text" name="username" placeholder="JonSnow">
 
@@ -16,6 +16,9 @@
     <option value="RESTAURANT">Restaurant</option>
     <option value="FOODTASTER">Food Taster</option>
   </select>
+  <br>
+  <label for="menu">Profile Picture</label>
+    <input id="menu" type="file" name="photo" placeholder="" required></article>
   <br>
   {{#if message }}
     <div class="error-message">{{ message }}</div>

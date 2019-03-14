@@ -1,6 +1,8 @@
 const express = require("express")
 const passport = require('passport')
 const router = express.Router()
+const uploadCloud = require('../config/cloudinary.js');
+
 
 const User = require("../models/User")
 
@@ -46,9 +48,11 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup")
 })
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", uploadCloud.single('photo'), (req, res, next) => {
   const username = req.body.username
   const password = req.body.password
+  const imgPath = req.file.url;
+  const imgName = req.file.originalname;
   const email = req.body.email
   const role = req.body.role
   if (username === "" || password === "") {
@@ -68,6 +72,8 @@ router.post("/signup", (req, res, next) => {
     const newUser = new User({
       username,
       password: hashPass,
+      imgPath,
+      imgName,
       email,
       role
     })
