@@ -4,6 +4,7 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
 @import url(vendor/lightbox.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -47,7 +48,7 @@ body {
   flex-direction: column; }
 
 img {
-  width: 700px; }
+  width: 100%; }
 
 a {
   color: black; }
@@ -75,14 +76,21 @@ h2 {
 
 button {
   text-transform: uppercase;
-  padding: .5rem 5rem;
+  padding: .6rem 2.2rem;
   background: #00796B;
   color: white;
-  border-radius: 10px;
+  border-radius: 100px;
+  margin: .5rem auto;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: all .2s ease-in-out; }
+  letter-spacing: 1px;
+  font-weight: 700;
+  box-sizing: border-box;
+  align-items: flex-start;
+  text-align: center;
+  transition: all .2s ease-in-out;
+  box-shadow: 0px 12px 30px -6px rgba(244, 160, 3, 0.418); }
   button:hover {
     background: #006054; }
 
@@ -107,21 +115,47 @@ button {
     color: #006054; }
 
 .box {
-  box-shadow: 0px 1px 6px 0px rgba(50, 50, 50, 0.2);
+  box-shadow: 4px 1px 6px 0px rgba(50, 50, 50, 0.2);
   transition: all 0.4s ease-in-out;
   border-radius: 8px;
   display: block; }
   .box:hover {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1 5px 20px rgba(0, 0, 0, 0.2);
     transform: translate(0, -4px); }
   .box h2 {
     padding: 2rem;
+    border-radius: 5px;
     background: #006054;
     color: white;
     margin-bottom: 2rem;
-    font-size: 2.5rem; }
+    font-size: 2.8rem; }
   .box #form-container {
     padding: 2rem; }
+  .box form > label {
+    text-transform: uppercase;
+    text-align: left;
+    opacity: .8;
+    font-size: .8rem; }
+  .box form label {
+    margin-bottom: .5rem; }
+  .box form input {
+    margin-bottom: 1rem;
+    border-radius: 3px 3px 3px 3px;
+    overflow: hidden;
+    border-width: 0px 0px 2px 0px;
+    border: 2px solid;
+    border-color: transparent transparent rgba(3, 244, 103, 0.671) transparent;
+    background: #FAFAFA;
+    transition: all .2s ease-in-out;
+    padding: .7rem;
+    font-size: .9rem; }
+  .box a.link {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #03A9F4; }
+  .box p {
+    margin: 1rem; }
 
 #searchFood {
   font-size: 110px;
@@ -166,7 +200,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding-top: 50px; }
+  max-width: 1300px;
+  padding-top: 5%; }
 
 .restaurant-info {
   width: 45%;
@@ -174,7 +209,80 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   margin-bottom: 4%;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 1px 6px 0px rgba(50, 50, 50, 0.2);
+  transition: all 0.4s ease-in-out;
+  border-radius: 8px;
+  overflow: hidden; }
+  .restaurant-info:hover {
+    box-shadow: 0 1 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -10px); }
+
+.info-link {
+  padding: 4%;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600; }
+  .info-link:hover {
+    color: #ff9d00;
+    transform: translate(0, -4px); }
+
+.recipe {
+  text-align: center;
+  font-size: 4rem; }
+
+.food-container {
+  display: grid;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box; }
+
+.food-container-1 {
+  grid-column: 1; }
+
+.food-container-2 {
+  grid-column: 2;
+  margin: inherit; }
+
+.recipe h1 {
+  text-align: center;
+  font-size: 4rem; }
+  .recipe h1 p {
+    font-weight: bold; }
+
+.recipe h2 {
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  size: 0.7rem; }
+
+.recipe h3 {
+  line-height: 2.5rem;
+  text-align: center;
+  margin-top: 2rem; }
+
+.restaurant-info a {
+  text-decoration: none; }
+
+.food-image a {
+  width: 100%;
+  height: 20rem; }
+
+.food-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
+
+.restaurant-info a {
+  width: 100%;
+  height: 20rem; }
+
+.restaurant-info img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
 
 #main-container {
   display: grid;

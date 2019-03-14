@@ -4,18 +4,22 @@
   {{#each restaurants}}
 
   <div class="restaurant-info">
-    <a href="/restaurant/details/{{id}}">{{name}}</a>
     {{!-- <img src={{logo}}> --}}
     
     <a href={{logo}} data-lightbox={{logo}}>
     <img src={{logo}} alt=""></a>
+    <a class="info-link" href="/restaurant/details/{{id}}">{{name}}</a>
 
   </div>
 
   {{/each}}
   </div>
 
+
+
   <div id="map"></div>
+
+
 
 </section>
 

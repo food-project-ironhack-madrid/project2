@@ -1,3 +1,4 @@
+<section class="box">
 <h2>Signup</h2>
 
 <form action="/auth/signup" method="POST"  enctype="multipart/form-data" id="form-container">
@@ -7,15 +8,21 @@
   <br><br>
 
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
+  <input id="password" type="password" name="password" placeholder="">
   <br>
-  <label for="email">Email</label>
-  <input id="email" type="email" name="email" placeholder="Your email">
+
+   <br>
+  <label for="email"> Email</label>
+  <input id="email" type="email" name="email" placeholder="johnsnow@ironhack.com">
   <br>
   <select name="role" id="role">
     <option value="RESTAURANT">Restaurant</option>
     <option value="FOODTASTER">Food Taster</option>
   </select>
+
+
+
+
   <br>
   <label for="menu">Profile Picture</label>
     <input id="menu" type="file" name="photo" placeholder="" required></article>
@@ -30,6 +37,7 @@
 
   <p class="account-message">
     Do you already have an account?
-    <a href="/auth/login">Login</a>
+    <a class ="link" href="/auth/login">Login</a>
   </p>
 </form>
+</section>
