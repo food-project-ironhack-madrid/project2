@@ -1,23 +1,26 @@
 
-<div class="full-restaurant">
-{{#each restaurants}}
+<section>
+  <div class="full-restaurant">
+  {{#each restaurants}}
 
 
 
 
-<div class="restaurant-info">
-  <a href="/restaurant/details/{{id}}">{{name}}</a>
-  <img src={{imgPath}}>
-  
-  <a href={{logo}} data-lightbox={{logo}}>
-  <img src={{logo}} alt=""></a>
+  <div class="restaurant-info">
+    <a href="/restaurant/details/{{id}}">{{name}}</a>
+    {{!-- <img src={{logo}}> --}}
+    
+    <a href={{logo}} data-lightbox={{logo}}>
+    <img src={{logo}} alt=""></a>
 
- </div>
+  </div>
 
-{{/each}}
-</div>
+  {{/each}}
+  </div>
 
-<div id="map"></div>
+  <div id="map"></div>
+
+</section>
 
 
 <script>
