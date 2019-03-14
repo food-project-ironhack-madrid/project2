@@ -241,12 +241,7 @@ if (navigator.geolocation) {
   console.log("Comprate un pc")
 }
 
-
-
-///////////////////////////////////77
-
     placeRestaurants = (restaurants) => {
-        // console.log(restaurants)
         const markers = []
 
         restaurants.forEach(restaurants => {
@@ -264,10 +259,5 @@ if (navigator.geolocation) {
         });
 
     }
-
     placeRestaurants(window.result)
-
-
-
-    
 })

@@ -1,9 +1,9 @@
+require('dotenv').config()
+
 const express = require('express')
 const router  = express.Router()
 const axios = require('axios')
 const Restaurant = require("../models/Restaurant")
-
-
 
 router.get('/', (req, res, next) => {
 
@@ -12,9 +12,6 @@ router.get('/', (req, res, next) => {
   .catch(err => {console.log(err)})
 
 })
-
-
-
 
 /* FOOD API */
 router.post('/', (req,res,next) =>{
@@ -42,19 +39,6 @@ router.post('/', (req,res,next) =>{
 getRecipeInfo()
 })
 
-
-
-// router.get('/about', (req,res,next))
-
-
-
-
-
-
-
-
-
-
+router.get("/about", (req, res, next) => res.render("about", { "message": req.flash("Error getting about page") }))
 
 module.exports = router
-

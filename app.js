@@ -58,7 +58,6 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 // default value for title local
 app.locals.title = 'TastyMap'
 
-
 //APIGOOGLE
 app.locals.apiMap=process.env.APIGOOGLE
 
@@ -91,7 +90,6 @@ app.use((req, res, next) => {
 app.use(flash())
 require('./passport')(app)
 
-    
 const index = require('./routes/index')
 app.use('/', index);
 
@@ -103,7 +101,6 @@ app.use('/restaurant', restRoutes);
 
 const profileRoutes = require('./routes/users')
 app.use ('/profile', profileRoutes)
-
 
 
 module.exports = app
