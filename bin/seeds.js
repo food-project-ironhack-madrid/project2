@@ -52,11 +52,12 @@ let restaurants = [
   {
     name: "Triciclo",
     logo: "/images/triciclo-logo.png",
-    description: "",
+    description: "La ilusión de tres cocineros de acercar una gastronomia de elite a todos aquellos que disfruten de la mezcla de sabores y de probar diferentes productos.",
     address: "Calle de Sta. Maria, 28, Madrid, Spain",
     location:{type: "Point", coordinates: [40.4128929,-3.697243]},
     foodStyle: "spanish",
-    specialties: ["oyster ","artichokes"],
+    specialties: ["oyster ","artichokes","tuna","steak tartare","shrimp"],
+    healthLabel: [] ,
     phone: "+34-910244798",
     menu: "/images/triciclo-menu.png",
     website: "http://eltriciclo.es/triciclo/"
@@ -64,11 +65,12 @@ let restaurants = [
   {
     name: "Sahuaro",
     logo: "/images/sahuaro-logo.png",
-    description: "",
+    description: "Apostamos por mostrar un México que no solo va de multicolores, luchadores y mariachis. Mostramos un México más de ritual, más rustico y más real.",
     address: "Plaza de Cascorro, 2, Madrid, Spain",
     location:{type: "Point", coordinates: [40.411229,-3.707142]},
     foodStyle: "mexican",
-    specialties: ["tacos"," burritos"],
+    specialties: ["tacos"," burritos","guacamole","nachos","quesadillas"],
+    healthLabel: [] ,
     phone: "+34-914296449",
     menu: "/images/sahuaro-menu.png",
     website: "http://sahuaromadrid.com/"
@@ -76,11 +78,12 @@ let restaurants = [
   {
     name: "Fratelli Figurato",
     logo: "/images/fratelli-figurato-logo.png",
-    description: "Dos hermanos napolitanos y una pasión fortísima por la pizza. Una carrera prominente en Marketing en diferentes países, pero deciden dejarlo todo. Solo tienen un gran sueño. Reinventar la grande pizza napolitana utilizando como ingrediente secreto la innovación, haciéndola más ligera y utilizando productos increíbles de la tierra.",
+    description: "Dos hermanos napolitanos y una pasión fortísima por la pizza. Deciden dejarlo todo y solo tienen un gran sueño. Reinventar la gran pizza napolitana.",
     address: "Calle de Alonso Cano, 37, Madrid, Spain",
     location:{type: "Point", coordinates: [40.438911,-3.697848]},
     foodStyle: "italian",
     specialties: ["pizza","calzone"],
+    healthLabel: [] ,
     phone: "+34-914857993",
     menu: "/images/fratelli-figurato-menu.png",
     website: "https://www.fratellifigurato.es/"

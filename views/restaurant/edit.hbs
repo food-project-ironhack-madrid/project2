@@ -1,23 +1,23 @@
 <h2>Add Restaurant</h2>
 <form action="/restaurant/add" method="post" enctype="multipart/form-data" id="form-container">
   <label for="name">Your Name:</label>
-  <input id="name" type="text" name="name" placeholder={{restaurant.name}} required>
+  <input id="name" type="text" name="name" value= {{restaurant.name}} required>
   <br>
   <label for="description">Your story:</label>
-  <input id="description" type="text" name="description" placeholder="who are you" required>
+  <input id="description" type="text" name="description" value= {{restaurant.description}} required>
   <br>
   <label for="address">Your Address:</label>
-  <input id="address" type="text" name="address" placeholder=" Calle Mayor, 2" required>
+  <input id="address" type="text" name="address" value= {{restaurant.address}} required>
   <br>
   <label for="location">Your Location:</label>
-  <input id="latitude" type="text" name="latitude" placeholder="latitude" required>
-  <input id="longitude" type="text" name="longitude" placeholder="longitude" required>
+  <input id="latitude" type="text" name="latitude" value={{restaurant.latitude}} required>
+  <input id="longitude" type="text" name="longitude" value={{restaurant.longitude}} required>
   <br>
   <label for="foodStyle">What Food Style?</label>
-  <input id="foodStyle" type="text" name="foodStyle" placeholder=" Mexican" required>
+  <input id="foodStyle" type="text" name="foodStyle" value={{restaurant.foodStyle}} required>
   <br>
   <label for="specialties">What are your specialties?</label>
-  <input id="specialties" type="text" name="specialties" placeholder=" Tacos, Burritos" required>
+  <input id="specialties" type="text" name="specialties" value={{restaurant.specialties}} required>
   <br>
 
   <label for="healthLabel">Any Health Label?</label> <br>
@@ -41,13 +41,13 @@
 
   <br>
   <label for="phone">Phone Number</label>
-  <input id="phone" type="text" name="phone" placeholder="+34 912323203" required>
+  <input id="phone" type="text" name="phone" value={{restaurant.phone}} required>
   <br>
   <label for="menu">Logo</label>
-  <input id="menu" type="file" name="photo" placeholder="" required>
+  <input id="menu" type="file" name="photo" value="" required>
   <br>
   <label for="website">Website</label>
-  <input id="website" type="text" name="website" placeholder="www.hello.com" required>
+  <input id="website" type="text" name="website" value={{restaurant.}} required>
   <br>
   {{#if message }}
   <div class="error-message">{{ message }}</div>
