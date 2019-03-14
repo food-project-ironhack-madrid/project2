@@ -1,48 +1,21 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #f3c527;
-}
+// HELPERS
+@import 'helpers/variables';
 
-body img {
-  width: 200px;
-}
+// BASE
+@import 'base/reset';
+@import 'base/base';
 
-a {
-  color: black;
-}
+// VENDORS
+@import 'vendor/lightbox.css';
 
-#map {
-  width: 1000px;
-  height: 500px;
-}
+// COMPONENTS
+@import 'components/buttons';
+@import 'components/maps';
 
-#nav-bar a {
-  text-decoration: none;
-  font-size: 20px;
-  padding: 40px;
-}
+// LAYOUT
+@import 'layout/navbar';
+@import 'layout/box';
 
-#searchFood {
-  width: 500px;
-  height: 100px;
-  border: 0px;
-  text-align: center;
-  font-size: 50px;
-}
-
-.full-restaurant {
-  
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding-top: 50px;
-}
-
-.restaurant-info{
-  width: 45%;
-  margin: auto;
-  margin-bottom: 4%;
-
-  
-}
+// PAGES
+@import 'pages/home';
+@import 'pages/restaurants';

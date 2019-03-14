@@ -1,22 +1,116 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #f3c527; }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
+@import url(vendor/lightbox.css);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-body img {
-  width: 200px; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f3c527;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+img {
+  width: 700px; }
 
 a {
   color: black; }
 
+main {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white; }
+
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  color: #00796B; }
+
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+button {
+  text-transform: uppercase;
+  padding: .5rem 5rem;
+  background: #00796B;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all .2s ease-in-out; }
+  button:hover {
+    background: #006054; }
+
 #map {
-  width: 1000px;
+  width: 100%;
   height: 500px; }
 
 #nav-bar a {
   text-decoration: none;
   font-size: 20px;
   padding: 40px; }
+
+.box {
+  box-shadow: 0px 1px 6px 0px rgba(50, 50, 50, 0.2);
+  transition: all 0.4s ease-in-out;
+  border-radius: 8px;
+  display: block; }
+  .box:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -4px); }
+  .box h2 {
+    padding: 2rem;
+    background: #006054;
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2.5rem; }
+  .box #form-container {
+    padding: 2rem; }
 
 #searchFood {
   width: 500px;
@@ -34,6 +128,9 @@ a {
 .restaurant-info {
   width: 45%;
   margin: auto;
-  margin-bottom: 4%; }
+  margin-bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

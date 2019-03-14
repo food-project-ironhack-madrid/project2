@@ -1,5 +1,5 @@
 
-<ul class="full-restaurant">
+<div class="full-restaurant">
 {{#each restaurants}}
 
 
@@ -8,14 +8,14 @@
 <div class="restaurant-info">
   <a href="/restaurant/details/{{id}}">{{name}}</a>
   <img src={{imgPath}}>
+  
   <a href={{logo}} data-lightbox={{logo}}>
-  <img src={{logo}} alt="">
-</a>
+  <img src={{logo}} alt=""></a>
 
  </div>
 
 {{/each}}
-</ul>
+</div>
 
 <div id="map"></div>
 

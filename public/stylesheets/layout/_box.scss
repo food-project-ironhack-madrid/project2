@@ -1,0 +1,23 @@
+.box {
+    box-shadow: 0px 1px 6px 0px rgba(50, 50, 50, 0.2);
+    transition: all 0.4s ease-in-out;
+    border-radius: 8px;
+    display: block;
+    
+    &:hover {
+        box-shadow: 0 15px 20px rgba(0,0,0,0.2);
+        transform: translate(0, -4px);
+    }
+
+    h2 {
+        padding: 2rem;
+        background: #006054;
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+    }
+
+    #form-container{
+        padding: 2rem;
+    }
+}

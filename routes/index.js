@@ -14,6 +14,8 @@ router.get('/', (req, res, next) => {
 })
 
 
+
+
 /* FOOD API */
 router.post('/', (req,res,next) =>{
   const search = req.body.searchFood
@@ -42,7 +44,7 @@ getRecipeInfo()
 
 
 
-
+// router.get('/about', (req,res,next))
 
 
 

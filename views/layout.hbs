@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link href="/stylesheets/lightbox.css" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-
 </head>
 <body>
   <nav id="nav-bar">
     <a href="/">Home</a>
+    <a href="/">About us</a>
     <a href="/restaurant/show">Restaurants</a>
     {{#if restaurantRole}}
     <a href="/restaurant/add">New Restaurant</a>
@@ -27,17 +24,15 @@
     {{/if}}
   </nav>
 
- <script src="/javascripts/lightbox.js"></script>
 
 
 
-
+<script src="/javascripts/lightbox.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key={{apiMap}}"></script>
   <script src="/javascripts/script.js"></script>
-
+<main>
   {{{body}}}
-
+</main>
 </body>
- 
 </html>

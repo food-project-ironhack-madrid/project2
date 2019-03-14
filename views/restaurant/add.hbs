@@ -1,6 +1,6 @@
-<h2>Add Restaurant</h2>
+<h1>Add Restaurant</h1>
 <form action="/restaurant/add" method="post" enctype="multipart/form-data" id="form-container">
-  <label for="name">Your Name:</label>
+  <h3><label for="name">Your Name:</label>
   <input id="name" type="text" name="name" placeholder=" Potato Factory" required>
   <br>
   <label for="description">Your story:</label>
@@ -20,26 +20,24 @@
   <input id="specialties" type="text" name="specialties" placeholder=" Tacos, Burritos" required>
   <br>
 
-  <label for="healthLabel">Any Health Label?</label> <br>
-  <input type="checkbox" name="healthLabel" value="vegan" /> vegan
-  <input type="checkbox" name="healthLabel" value="vegetarian" /> vegetarian
-  <input type="checkbox" name="healthLabel" value="paleo" /> paleo
-  <input type="checkbox" name="healthLabel" value="dairy-free" /> dairy-free
-  <input type="checkbox" name="healthLabel" value="gluten-free" /> gluten-free
-  <input type="checkbox" name="healthLabel" value="wheat-free" /> wheat-free
-  <input type="checkbox" name="healthLabel" value="fat-free" /> dairy-free
-  <input type="checkbox" name="healthLabel" value="low-sugar" /> low-sugar
-  <input type="checkbox" name="healthLabel" value="peanut-free" /> peanut-free
-  <input type="checkbox" name="healthLabel" value="wheat-free" /> wheat-free
-  <input type="checkbox" name="healthLabel" value="fat-free" /> dairy-free
-  <input type="checkbox" name="healthLabel" value="low-sugar" /> low-sugar
-  <input type="checkbox" name="healthLabel" value="peanut-free" /> peanut-free
-  <input type="checkbox" name="healthLabel" value="tree-nut-free" /> tree-nut-free
-  <input type="checkbox" name="healthLabel" value="soy-free" /> soy-free
-  <input type="checkbox" name="healthLabel" value="fish-free" /> fish-free
-  <input type="checkbox" name="healthLabel" value="shellfish-free" /> shellfish-free
+  <label for="healthLabel">Any Health Label?</label> <br></h3>
 
-  <br>
+  <h4><input type="checkbox" name="healthLabel" value="vegan" /> Vegan
+  <input type="checkbox" name="healthLabel" value="vegetarian" /> Vegetarian
+  <input type="checkbox" name="healthLabel" value="paleo" /> Paleo
+  <input type="checkbox" name="healthLabel" value="dairy-free" /> Dairy-free
+  <input type="checkbox" name="healthLabel" value="gluten-free" /> Gluten-free
+  <input type="checkbox" name="healthLabel" value="wheat-free" /> Wheat-free
+  <input type="checkbox" name="healthLabel" value="low-sugar" /> Low-sugar
+  <input type="checkbox" name="healthLabel" value="peanut-free" /> Peanut-free
+  <input type="checkbox" name="healthLabel" value="tree-nut-free" /> Tree-nut-free
+  <input type="checkbox" name="healthLabel" value="soy-free" /> Soy-free
+  <input type="checkbox" name="healthLabel" value="fish-free" /> Fish-free
+  <input type="checkbox" name="healthLabel" value="shellfish-free" /> Shellfish-free
+  <input type="checkbox" name="healthLabel" value="plant based" /> Plant based
+</h4><br>
+
+  <h3>
   <label for="phone">Phone Number</label>
   <input id="phone" type="text" name="phone" placeholder="+34 912323203" required>
   <br>
@@ -56,5 +54,5 @@
   <br><br>
 
   <button id="create-rest">Create new Restaurant</button>
-
+</h3>
 </form>

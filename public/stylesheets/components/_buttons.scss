@@ -1,0 +1,15 @@
+button {
+    text-transform: uppercase;
+    padding: .5rem 5rem;
+    background: $primary-color;
+    color: lighten($primary-color, 80%);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background: darken($primary-color, 5%);
+    }
+}

@@ -1,6 +1,6 @@
-<h2>Restaurant Details</h2>
+<h1>{{restaurant.name}}</h1>
 <section id="restaurant-container">
-  <p>{{restaurant.name}}</p><br>
+  
   {{#if isRestaurantOwner}}
   <form action="/restaurant/edit/{{restaurant._id}}" method="get" id="form-container">
   <button>Edit Your Restaurant</button><br><br>
@@ -12,46 +12,68 @@
   </form>
   {{/if}}
   <br><br>
-  <img src={{restaurant.logo}}>
+   <a href={{restaurant.logo}} data-lightbox={{restaurant.logo}}>
+  <img src={{restaurant.logo}} alt=""></a>
   <img src={{restaurant.imgPath}}>
-  <p>{{restaurant.description}}</p><br>
-  <p>{{restaurant.address}}</p><br>
-  <ul>
+
+  <h3>Our philosophy: "{{restaurant.description}}"</h3><br>
+  <h3> Foodstyle: {{restaurant.foodStyle}}</h3>
+  <ul><p></p>
     {{#each restaurant.healthLabel}}
     <li>{{this}}</li>
     {{/each}}
   </ul>
-  <p>{{restaurant.foodStyle}}</p><br>
-  <ul>
+ 
+  {{!-- <ul>
     {{#each restaurant.specialties}}
     <li>{{this}}</li>
     {{/each}}
-  </ul>
-  <p>{{restaurant.phone}}</p><br>
-  
-  <a href='/restaurant/menu/{{restaurant.id}}'>Food Menu</a>
-  <a href={{restaurant.website}}>Website</a>
+  </ul> --}}
+<a href=tel:{{restaurant.phone}}>Click to Call</a><br>
+<a href={{restaurant.website}}>Web page</a>
+<h3>Location: {{restaurant.address}}</h3><br>
+
+
+  {{!-- <a href='/restaurant/menu/{{restaurant.id}}'>Explore food menu</a> --}}
+
+  <h3>Explore food menu</h3>
+<a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}><img src={{restaurant.menu}} alt=""></a>
+
 </section>
 
-<h2>Other users constructive reviews</h2>
-{{#each restaurant.reviews}}
-<div class="review-item">
-  <p>{{username}}</p>
-  <p>{{comments}}</p>
-  {{!-- <span>{{user}}</span> --}}
-</div>
-{{/each}}
-
 {{#if isUserLoggedIn}}
-  <h2>Create a review!</h2>
+  <h2>What does your heart, mind and soul think about this restaurant?</h2>
   <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
-    <label for="">Review:</label>
+    <label for="">Be honest our we will hunt you!</label>
     <textarea type="text" name="comments"></textarea>
     <br>
     {{#if message }}
     <div class="error-message">{{ message }}</div>
     {{/if}}
     <br><br>
-    <button id="add-review" type="submit">Add Your Review</button>
+    <button id="add-review" type="submit">Send your review</button>
   </form>
 {{/if}}
+
+
+<h2>Our FOOD LOVER experiences, critiques, reviews and mucho love: </h2>
+{{#each restaurant.reviews}}
+<div class="review-item">
+  <p>{{username}}: {{comments}}</p>
+{{/each}}
+</div>
+
+
+
+
+<div id="map"></div>
+
+
+<script>
+  
+  console.log(window)
+  window.result = {{{result}}}
+  const result2 = {{{result}}}
+
+</script>
+
