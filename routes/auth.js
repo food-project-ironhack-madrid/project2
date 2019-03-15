@@ -19,7 +19,7 @@ router.post('/login', (req, res, next) => {
 
   if (usernameInput === '' || passwordInput === '') {
     res.render('auth/login', {
-      errorMessage: 'Enter both username and password to log in.'
+      message: 'Enter both username and password to log in.'
     });
     return;
   }
@@ -27,14 +27,14 @@ router.post('/login', (req, res, next) => {
   User.findOne({ username: usernameInput }, (err, theUser) => {
     if (err || theUser === null) {
       res.render('auth/login', {
-        errorMessage: `There isn't an account with username ${usernameInput}.`
+        message: `There isn't an account with username ${usernameInput}.`
       });
       return;
     }
 
     if (!bcrypt.compareSync(passwordInput, theUser.password)) {
       res.render('auth/login', {
-        errorMessage: 'Invalid password.'
+        message: 'Invalid password.'
       });
       return;
     }
