@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req,res,next) =>{
   const search = req.body.searchFood
   const max = 6
-  console.log(search)
+  let errorMessage = ''
   const getRecipeInfo = (arg) => {
     axios
     .get(`https://api.edamam.com/search?q=${search}&app_id=${process.env.APIID}&app_key=${process.env.APIKEYS}&from=0&to=${max}&diet=high-protein`)
@@ -29,9 +29,13 @@ router.post('/', (req,res,next) =>{
           ]
         })
         .then(restaurants => {
-        console.log(recipes.data.hits.recipe)
-        console.log(restaurants)
-        res.render('food/food-search', {result:recipes.data.hits, search, restaurants})
+        if(restaurants.length === 0){ //comprueba si la busqueda no dio resultados
+          res.render('food/food-search', {
+            errorMessage: `Results for ${search} couldn't be found.`
+          });
+          return;
+        }
+        res.render('food/food-search', {result:recipes.data.hits, search, restaurants, errorMessage})
     })
     .catch(err => console.log("An error ocurred: ", err))
   })

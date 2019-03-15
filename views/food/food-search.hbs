@@ -1,3 +1,10 @@
+{{#if errorMessage }}
+<div class="error-message">
+    <p>{{ errorMessage }}</p>
+</div>
+
+{{else}}
+
 <div>
     <h2>Restaurants with <span style= "font-weight:bold">{{search}}</span> food</h2>
           <div class="restaurant-info">
@@ -50,4 +57,5 @@
     </div>
 
 </div>
-</div>
+
+{{/if}}
