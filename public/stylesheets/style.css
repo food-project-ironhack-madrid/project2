@@ -313,11 +313,13 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   justify-content: space-between; }
 
 .profile {
-  margin: 40px 20px; }
+  margin: 40px 130px;
+  padding-top: 80px; }
 
 .profile-info {
   display: flex;
-  align-items: flex-end; }
+  align-items: flex-end;
+  justify-content: center; }
 
 .profile-info .fa-linkedin::before {
   font-size: 54px;
@@ -325,7 +327,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   margin-left: 10px; }
 
 .profile img {
-  width: 500px;
+  width: 400px;
   border-radius: 50%; }
 
 #main-container {
