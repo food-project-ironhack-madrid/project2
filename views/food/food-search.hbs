@@ -6,15 +6,20 @@
 {{else}}
 
 <div>
-    <h2>Restaurants with: {{search}} food</h2>
+    <h2>Restaurants with <span style= "font-weight:bold">{{search}}</span> food</h2>
+          <div class="restaurant-info">
     <ul>
-        {{#each restaurants}}
-            <li><a href="/restaurant/details/{{id}}">{{name}}</a></li>
-        {{/each}}
-    </ul>
+
+    {{#each restaurants}}
+<a href={{logo}} data-lightbox={{logo}}>
+    <img src={{logo}} alt=""></a>
+    <a class="info-link" href="/restaurant/details/{{id}}"><font size="10">{{name}}</font></a>
+  
+   {{/each}} </ul>
+    </div>
 
 
-    <h1 class="recipe">Recipes:</h1>
+    <h1 class="recipe"> Our Recipes</h1>
     <div class="full-restaurant">
         {{#each result}}
             <div class="restaurant-info">
@@ -28,20 +33,20 @@
 
 <div class= "food-container">
     <div class= "food-container-1">
-                <p>Health Labels:</p>
+                <p>Health Labels</p>
 
                 <ul>
                     {{#each recipe.healthLabels}}
-                        <li>{{this}}</li>
+                        <li><img class="checks" src="/images/checked.svg">{{this}}</li>
                     {{/each}}
                 </ul>
                 </div>
 <div class= "food-container-2">
-                <p>Diet Labels:</p>
+                <p>Diet Labels</p>
 
                 <ul>
                     {{#each recipe.dietLabels}}
-                        <li>{{this}}</li>
+                        <li><img class="checks" src="/images/checked.svg">{{this}}</li>
                     {{/each}}
                 </ul>
                 </div>
@@ -52,5 +57,9 @@
     </div>
 
 </div>
+<<<<<<< HEAD
 
 {{/if}}
+=======
+</div>
+>>>>>>> 3df97c3ea9572d3fd72db6c29b199f5447a73064
