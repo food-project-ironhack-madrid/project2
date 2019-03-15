@@ -5,25 +5,21 @@
   <label for="username">Username</label>
   <input id="username" type="text" name="username" placeholder="JonSnow">
 
-  <br><br>
+
 
   <label for="password">Password</label>
   <input id="password" type="password" name="password" placeholder="">
-  <br>
-
-   <br>
+  
   <label for="email"> Email</label>
   <input id="email" type="email" name="email" placeholder="johnsnow@ironhack.com">
-  <br>
-  <select name="role" id="role">
+
+  <label for="role">Who are you?</label>
+    <select name="role" id="role">
     <option value="RESTAURANT">Restaurant</option>
     <option value="FOODTASTER">Food Taster</option>
   </select>
 
 
-
-
-  <br>
   <label for="menu">Profile Picture</label>
     <input id="menu" type="file" name="photo" placeholder="" required></article>
   <br>
@@ -31,7 +27,7 @@
     <div class="error-message">{{ message }}</div>
   {{/if}}
 
-  <br><br>
+
 
   <button>Create account</button>
 
