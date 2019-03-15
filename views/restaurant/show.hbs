@@ -1,25 +1,17 @@
-
 <section>
   <div class="full-restaurant">
   {{#each restaurants}}
 
-  <div class="restaurant-info">
-    
+  <div class="restaurant-info" id="restaurant-title-info">
     <a href={{logo}} data-lightbox={{logo}}>
     <img src={{logo}} alt=""></a>
     <a class="info-link" href="/restaurant/details/{{id}}">{{name}}</a>
-
   </div>
 
   {{/each}}
   </div>
 
-
-
   <div id="map"></div>
-
-
-
 </section>
 
 <script>

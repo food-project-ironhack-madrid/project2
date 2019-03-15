@@ -7,6 +7,11 @@
   border-bottom: 1px grey;
 }
 
+#restaurants-title-result{
+  text-align: center;
+  padding: 30px 0;
+}
+
 #searchFood:focus {
 	outline: none; 
 }
@@ -43,4 +48,21 @@
 /* active state */
 input:focus ~ .bar:before, input:focus ~ .bar:after {
   width:50%;
+}
+
+#no-results{
+  color: $primary-color;
+  font-size: 30px;
+}
+
+#sad-face{
+  width: 20rem;
+  text-align: center;
+}
+
+#error-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

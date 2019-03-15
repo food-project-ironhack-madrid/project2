@@ -1,12 +1,13 @@
 {{#if errorMessage }}
-<div class="error-message">
-    <p>{{ errorMessage }}</p>
+<div id="error-search">
+    <img id= "sad-face" src="/images/sad.png">
+    <p id="no-results">{{ errorMessage }}</p>
 </div>
 
 {{else}}
 
 <div>
-    <h2>Restaurants with <span style= "font-weight:bold">{{search}}</span> food</h2>
+    <h2 id="restaurants-title-result">Restaurants with <span style= "font-weight:bold">{{search}}</span> food</h2>
           <div class="restaurant-info">
     <ul>
 
