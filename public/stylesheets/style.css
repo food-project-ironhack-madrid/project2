@@ -352,6 +352,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   width: 400px;
   border-radius: 50%; }
 
+#reviews-header {
+  font-weight: bolder; }
+
 #main-container {
   display: grid;
   max-height: calc(100vh - 3.5rem); }

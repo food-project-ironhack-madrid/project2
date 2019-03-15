@@ -29,6 +29,7 @@ router.post('/', (req,res,next) =>{
           ]
         })
         .then(restaurants => {
+          console.log(recipes.data.hits)
         if(restaurants.length === 0){ //comprueba si la busqueda no dio resultados
           res.render('food/food-search', {
             errorMessage: `Results for ${search} couldn't be found.`

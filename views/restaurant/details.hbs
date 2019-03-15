@@ -29,24 +29,24 @@
       <p class= "list-individual"><img class="icons" src="/images/location.svg">Location: {{restaurant.address}}</p>
       <p class= "list-individual"><img class="icons" src="/images/phone.svg"><a href= tel:{{restaurant.phone}}>{{restaurant.phone}}</a></p>
       <p class= "list-individual"><img class="icons" src="/images/website.svg"><a href={{restaurant.website}}>Web page</a></p>
-      <p class= "list-individual" id="menu-container"> <a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}>Food Menu</a></p>
+      <p class= "list-individual" id="menu-container"><img class="icons" src="/images/menu.svg"><a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}>Food Menu</a></p>
     </section>
   </section>
 
 
-  <p id="reviews-header">Our FOOD LOVER experiences, critiques, reviews and mucho love: </p>
+  <p id="reviews-header">Our FOOD LOVER experiences, critiques, reviews and mucho love:</p>
 
   <div class="review-item">
   {{#each restaurant.reviews}}
-    <p>{{username}}: {{comments}}</p>
+    <h3><span style= "font-size: 20px">{{username}}:</span></h3> 
+    <p><span style= "font-style: italic">"{{comments}}"</span></p>
   {{/each}}
   </div>
 
   {{#if isUserLoggedIn}}
     <h2>What does your heart, mind and soul think about this restaurant?</h2>
     <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
-      <label for="">Be honest our we will hunt you!</label>
-      <textarea placeholder="Remember, be nice!" cols="30" rows="5" ></textarea>
+      <textarea placeholder="Be honest or we will hunt you!" cols="30" rows="5" name="comments"></textarea>
       {{#if message }}
       <div class="error-message">{{ message }}</div>
       {{/if}}

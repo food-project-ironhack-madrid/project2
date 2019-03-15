@@ -7,14 +7,14 @@ const uploadCloud = require('../config/cloudinary.js');
 router.get("/add", (req, res, next) => res.render("restaurant/add", { "message": req.flash("error") }))
 
 router.post("/add",uploadCloud.single('photo'), (req, res, next) => {
-const {name,logo, description,  address, latitude, longitude, foodStyle, specialties, healthLabel, phone, menu, website} = req.body
+const {name, description,  address, latitude, longitude, foodStyle, specialties, healthLabel, phone, menu, website} = req.body
 const owner = req.session.currentUser._id
-const imgPath = req.file.url;
+const logo = req.file.url;
 const imgName = req.file.originalname;
  
 let location = {type: "Point", coodinates: [longitude, latitude]}
 
-const newRestaurant = new Restaurant({name,logo, owner, description, address, location, foodStyle, specialties, healthLabel, phone, imgPath, imgName, website})
+const newRestaurant = new Restaurant({name,logo, owner, description, address, location, foodStyle, specialties, healthLabel, phone, logo, imgName, website})
 
 newRestaurant.save()
 .then(restaurants => res.redirect('/restaurant/show'))
