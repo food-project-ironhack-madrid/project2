@@ -14,7 +14,7 @@
     {{/if}}
     {{#if isUserLoggedIn}}
       <form action="/restaurant/details/favorite/{{restaurant._id}}" method="POST" id="form-container">
-      <button>Save as Favorite</button>
+      <button id="favorite-button">Save as Favorite</button>
       </form>
     {{/if}}
   <section id="info-container">
@@ -29,10 +29,10 @@
       <p class= "list-individual"><img class="icons" src="/images/location.svg">Location: {{restaurant.address}}</p>
       <p class= "list-individual"><img class="icons" src="/images/phone.svg"><a href= tel:{{restaurant.phone}}>{{restaurant.phone}}</a></p>
       <p class= "list-individual"><img class="icons" src="/images/website.svg"><a href={{restaurant.website}}>Web page</a></p>
+      <p class= "list-individual" id="menu-container"> <a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}>Food Menu</a></p>
     </section>
   </section>
 
-  <p id="menu-container"> <a href={{restaurant.menu}} data-lightbox={{restaurant.menu}}>Food Menu</a></p>
 
   <p id="reviews-header">Our FOOD LOVER experiences, critiques, reviews and mucho love: </p>
 
@@ -46,13 +46,11 @@
     <h2>What does your heart, mind and soul think about this restaurant?</h2>
     <form action="/restaurant/details/{{restaurant._id}}" method="POST" id="form-container">
       <label for="">Be honest our we will hunt you!</label>
-      <textarea type="text" name="comments"></textarea>
-      <br>
+      <textarea placeholder="Remember, be nice!" cols="30" rows="5" ></textarea>
       {{#if message }}
       <div class="error-message">{{ message }}</div>
       {{/if}}
-      <br><br>
-      <button id="add-review" type="submit">Send your review</button>
+      <button id="favorite-button" type="submit">Send your review</button>
     </form>
   {{/if}}
   </article>

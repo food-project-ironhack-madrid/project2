@@ -103,7 +103,7 @@ button {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  background-color: burlywood;
+  background-color: #FFB300;
   height: 3.5rem;
   box-sizing: border-box; }
 
@@ -334,13 +334,14 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   justify-content: space-between; }
 
 .profile {
-  margin: 40px 130px;
+  flex: 0 0 35%;
   padding-top: 80px; }
 
 .profile-info {
   display: flex;
-  align-items: flex-end;
-  justify-content: center; }
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
 
 .profile-info .fa-linkedin::before {
   font-size: 54px;
@@ -354,6 +355,13 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 #main-container {
   display: grid;
   max-height: calc(100vh - 3.5rem); }
+
+#form-container {
+  margin-bottom: 2rem; }
+
+#favorite-button {
+  line-height: 0;
+  padding: 2rem; }
 
 #restaurant-container {
   display: flex;
@@ -387,7 +395,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 #info-container {
   display: grid;
-  padding: 3rem 8rem 3rem 15rem;
+  max-width: 400px;
+  margin: 0 auto;
   font-size: 2vh;
   text-align: left; }
 
@@ -430,6 +439,19 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 #reviews-header {
   padding-bottom: 40px; }
+
+textarea {
+  resize: none;
+  outline: none;
+  height: 40px; }
+
+#form-container {
+  display: initial; }
+  #form-container > label {
+    display: block; }
+  #form-container > textarea {
+    display: block;
+    margin: 0 auto; }
 
 #show-profile-container {
   text-align: center; }
